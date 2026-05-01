@@ -146,6 +146,9 @@ export default defineConfig(({ mode }) => {
     'https://web-scrapper-v1-d67589e7-e668-43ff-a78a-a3d-f80869cf.crewai.com/kickoff';
 
   return {
+    // Use relative paths so assets (images/videos) resolve when site
+    // is deployed to a subpath or served as static files.
+    base: './',
     plugins: [react(), crewAiProxyPlugin(crewAiApiKey, crewAiApiUrl)]
   };
 });

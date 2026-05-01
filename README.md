@@ -154,6 +154,26 @@ npm run build
 npm run preview
 ```
 
+## Vercel Deployment
+
+This project now includes serverless routes in `api/` so it can run on Vercel.
+
+Set these environment variables in the Vercel project settings before redeploying:
+
+| Variable | Purpose |
+| --- | --- |
+| `CREWAI_API_URL` | Full CrewAI kickoff URL, usually ending in `/kickoff`. |
+| `CREWAI_API_KEY` | Your active CrewAI API key. Rotate/revoke any old leaked key first. |
+
+Deployment checklist:
+
+1. Add the environment variables in Vercel.
+2. Redeploy the project.
+3. Open the deployed site and run one extraction.
+4. Confirm the browser calls `/api/kickoff` and `/api/status/:id` on your Vercel domain, not a 404.
+
+If you still see `CREWAI_API_URL not configured`, the Vercel environment variable was not saved for the production environment.
+
 ## Project Structure
 
 ```text

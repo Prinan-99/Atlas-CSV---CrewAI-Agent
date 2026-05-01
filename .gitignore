@@ -37,3 +37,6 @@ Thumbs.db
 *.tgz
 *.lock
 *~
+
+# Generated files
+.codex

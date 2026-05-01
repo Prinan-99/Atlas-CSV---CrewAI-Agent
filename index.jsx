@@ -3,7 +3,9 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 const POLL_INTERVAL_MS = 5000;
 const MAX_STATUS_CHECKS = 120;
 const WEBSITE_URL_PLACEHOLDER = 'Enter a website URL, for example https://example.com';
-const TUTORIAL_VIDEO_URL = '/assets/tutorial-how-it-works.mp4';
+const ASSET_BASE_URL = import.meta.env.BASE_URL || '/';
+const TUTORIAL_VIDEO_URL = `${ASSET_BASE_URL}assets/tutorial-how-it-works.mp4`;
+const TUTORIAL_POSTER_URL = `${ASSET_BASE_URL}assets/data-story-hero.png`;
 const CREATOR_NAME = 'Pria Nandhini M A';
 const CREATOR_LINKS = {
   linkedin: 'https://www.linkedin.com/in/prianandhinii',
@@ -966,7 +968,7 @@ const WebToCsvExtractor = () => {
                     autoPlay
                     muted
                     playsInline
-                    poster="/assets/data-story-hero.png"
+                    poster={TUTORIAL_POSTER_URL}
                     preload="auto"
                     onCanPlay={(event) => {
                       event.currentTarget.defaultPlaybackRate = 7;
